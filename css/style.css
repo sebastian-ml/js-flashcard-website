@@ -1,20 +1,55 @@
 :root {
   --primary-color: #3885df;
   --primary-color-hover: #3870df;
+  --header-height: 60px;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
-  color: #1581ee;
 }
-body:hover {
-  color: #459bf1;
+
+.header {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2em;
+  margin-left: 0.8em;
+  position: relative;
+}
+.navbar__link:after {
+  display: block;
+  content: "";
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  transition: width 0.2s ease;
+}
+.navbar__link:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 *, *:after, *:before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.container {
+  width: 97%;
+  max-width: 1200px;
 }
 
 /*# sourceMappingURL=style.css.map */

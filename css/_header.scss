@@ -1,0 +1,35 @@
+@use 'partials/mixins';
+
+.header {
+  margin: auto;
+  @include mixins.prefix(display, flex);
+  justify-content: flex-end;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.navbar {
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2em;
+    margin-left: .8em;
+    position: relative;
+
+    &:after {
+      display: block;
+      content: '';
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      position: absolute;
+      transition: width var(--short-animation) ease;
+    }
+
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}

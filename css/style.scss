@@ -2,8 +2,15 @@
 @use 'partials/clean-tags';
 @use 'partials/mixins';
 
+@use 'header';
+
 *, *:after, *:before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.container {
+  width: 97%;
+  max-width: 1200px;
 }
