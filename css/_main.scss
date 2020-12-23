@@ -1,0 +1,21 @@
+@use 'partials/mixins';
+
+.main {
+  &__section {
+    min-height: 100vh;
+    @include mixins.prefix(display, flex);
+    justify-content: center;
+    position: relative;
+
+    &:first-child {
+      min-height: calc(100vh - var(--header-height));
+    }
+  }
+
+  &__primary-heading {
+    width: 700px;
+    max-width: 95%;
+    position: absolute;
+    top: 20%;
+  }
+}

@@ -3,6 +3,7 @@
 @use 'partials/mixins';
 
 @use 'header';
+@use 'main';
 
 *, *:after, *:before {
   box-sizing: border-box;
@@ -11,6 +12,11 @@
 }
 
 .container {
-  width: 97%;
+  width: 95%;
   max-width: 1200px;
+  margin: auto;
+}
+
+.primary-heading {
+  text-align: center;
 }

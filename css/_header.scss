@@ -2,10 +2,15 @@
 
 .header {
   margin: auto;
-  @include mixins.prefix(display, flex);
-  justify-content: flex-end;
-  align-items: center;
   height: var(--header-height);
+  position: sticky;
+
+  &__container {
+    @include mixins.prefix(display, flex);
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .navbar {
