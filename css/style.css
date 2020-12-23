@@ -7,9 +7,10 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #DCDCDC;
 }
 
-h1, h2, h3 {
+h1, h2 {
   color: var(--primary-color);
   font-weight: 500;
   font-size: 2.35rem;
@@ -91,6 +92,58 @@ h2 {
 
 .heading {
   text-align: center;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2em 1em;
+  box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.25);
+}
+.card__question {
+  font-size: 1.2em;
+}
+.card__answers {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.3em 0;
+}
+.card__answer {
+  margin: 0.65em 0;
+}
+.card__btn {
+  margin-top: auto;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  border-radius: 25px;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(175px, 300px));
+  grid-template-rows: 350px;
+  grid-gap: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
