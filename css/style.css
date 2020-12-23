@@ -1,3 +1,16 @@
+:root {
+  --primary-color: #3885df;
+  --primary-color-hover: #3870df;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #1581ee;
+}
+body:hover {
+  color: #459bf1;
+}
+
 *, *:after, *:before {
   box-sizing: border-box;
   margin: 0;
