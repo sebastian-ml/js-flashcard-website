@@ -183,4 +183,26 @@ h2 {
   font-size: 1.3em;
 }
 
+.flashcards-types {
+  list-style: none;
+  font-size: 1.45rem;
+}
+.flashcards-types__item {
+  text-align: center;
+  margin-bottom: 1.7em;
+}
+.flashcards-types__item:before {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 50%;
+  min-width: 350px;
+  background-color: var(--primary-color);
+  margin: 0.5em auto;
+}
+
+.bold--md {
+  font-weight: 500;
+}
+
 /*# sourceMappingURL=style.css.map */

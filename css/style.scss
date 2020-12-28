@@ -108,3 +108,29 @@
     font-size: 1.3em;
   }
 }
+
+.flashcards-types {
+  list-style: none;
+  font-size: 1.45rem;
+
+  &__item {
+    text-align: center;
+    margin-bottom: 1.7em;
+
+    &:before {
+      display: block;
+      content: "";
+      height: 1px;
+      width: 50%;
+      min-width: 350px;
+      background-color: var(--primary-color);
+      margin: .5em auto;
+    }
+  }
+}
+
+.bold {
+  &--md {
+    font-weight: 500;
+  }
+}
