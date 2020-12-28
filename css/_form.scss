@@ -1,0 +1,44 @@
+@use 'partials/mixins';
+
+.form {
+  @include mixins.prefix(display, flex);
+  align-items: center;
+  flex-direction: column;
+  border-radius: var(--border-radius-basic);
+  background-color: #fff;
+  box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  margin: auto;
+  padding: 2em;
+
+  &__label {
+    font-size: .9em;
+  }
+
+  &__heading {
+    margin-bottom: .6em;
+  }
+
+  &__question {
+    font-size: .8em;
+  }
+
+  &__submit {
+    margin-top: 1.6em;
+  }
+
+  &__row {
+    width: 65%;
+    @include mixins.prefix(display, flex);
+    flex-direction: column;
+    margin: .45em;
+  }
+
+  &__input {
+    border-radius: 25px;
+    border: 1px solid #000;
+    background-color: #f6f6f6;
+    padding: 1em;
+    width: 100%;
+  }
+}

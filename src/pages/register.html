@@ -1,0 +1,42 @@
+{% set title = "Register" %}
+
+{% extends "base.njk" %}
+{% block head %}
+{% endblock %}
+
+{% block main %}
+<main class="register">
+    <div class="container login__container">
+        <form class="form">
+            <h1 class="form__heading">SIGN UP</h1>
+            <div class="form__row">
+                <label class="form__label" for="username"><b>Username</b></label>
+                <input class="form__input" type="email" id="username" required>
+            </div>
+            <div class="form__row">
+                <label class="form__label" for="email"><b>Email</b></label>
+                <input class="form__input" type="email" id="email" required>
+            </div>
+
+            <div class="form__row">
+                <label class="form__label" for="password"><b>Password</b></label>
+                <input class="form__input" type="password" id="password" required>
+            </div>
+            <div class="form__row">
+                <label class="form__label" for="password2"><b>Confirm password</b></label>
+                <input class="form__input" type="password" id="password2" required>
+            </div>
+
+            <div class="form__row">
+                <input type="submit" class="btn form__submit" value="Sign up">
+            </div>
+            <p class="form__question">
+                Already have an account? <a href="login.html">Log in</a>
+            </p>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

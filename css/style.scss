@@ -4,6 +4,7 @@
 
 @use 'header';
 @use 'section';
+@use 'form';
 
 *, *:after, *:before {
   box-sizing: border-box;
@@ -26,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: var(--border-radius-basic);
   padding: 2em 1em;
   box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.25);
 
@@ -133,4 +134,11 @@
   &--md {
     font-weight: 500;
   }
+}
+
+.login, .register {
+  min-height: calc(100vh - var(--header-height));
+  @include mixins.prefix(display, flex);
+  justify-content: center;
+  align-items: center;
 }
