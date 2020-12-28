@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "_head.njk" %}
+    {% block head %}{% endblock %}
+</head>
+<body>
+{% include "_header.njk" %}
+<!-- main content -->
+{% block main %}
+{% endblock %}
+
+{% block script %}
+    <!-- Additional script for certain page -->
+{% endblock %}
+</body>
+</html>

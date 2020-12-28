@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home - Flashcards</title>
-    <link rel="stylesheet" href="css/style.css">
+{% set title = "Home" %}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    
+{% extends "base.njk" %}
+{% block head %}
+{% endblock %}
 
-</head>
-<body>
-<header class="header">
-    <div class="container header__container">
-        <nav class="navbar">
-            <a href="#" class="navbar__link">Home</a>
-            <a href="#" class="navbar__link">About</a>
-            <a href="#" class="navbar__link">Login</a>
-        </nav>
-    </div>
-</header>
-<!-- main content -->
-
+{% block main %}
 
 <main class="main">
     <div class="container">
@@ -82,9 +65,7 @@
         </section>
     </div>
 </main>
+{% endblock %}
 
-
-
-
-</body>
-</html>
+{% block script %}
+{% endblock %}
