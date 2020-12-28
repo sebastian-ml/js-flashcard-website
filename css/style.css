@@ -65,8 +65,8 @@ h2 {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  justify-content: center;
-  position: relative;
+  align-items: center;
+  flex-direction: column;
 }
 .main__section:first-child {
   min-height: calc(100vh - var(--header-height));
@@ -74,8 +74,6 @@ h2 {
 .main__heading {
   width: 700px;
   max-width: 95%;
-  position: absolute;
-  top: 20%;
 }
 
 *, *:after, *:before {
@@ -142,7 +140,7 @@ h2 {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(175px, 300px));
-  grid-template-rows: 350px;
+  grid-auto-rows: min-content;
   grid-gap: 30px;
 }
 

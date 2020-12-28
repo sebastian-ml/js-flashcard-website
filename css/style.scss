@@ -68,6 +68,6 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(175px, 300px));
-  grid-template-rows: 350px;
+  grid-auto-rows: min-content;
   grid-gap: 30px;
 }
