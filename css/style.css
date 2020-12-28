@@ -59,7 +59,7 @@ h2 {
   left: 0;
 }
 
-.main__section {
+.section {
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,10 +68,10 @@ h2 {
   align-items: center;
   flex-direction: column;
 }
-.main__section:first-child {
+.section:first-child {
   min-height: calc(100vh - var(--header-height));
 }
-.main__heading {
+.section__heading {
   width: 700px;
   max-width: 95%;
 }
@@ -139,9 +139,48 @@ h2 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(175px, 300px));
+  grid-template-columns: repeat(3, minmax(175px, 280px));
   grid-auto-rows: min-content;
   grid-gap: 30px;
+}
+
+.leitner-boxes {
+  max-width: 1100px;
+  width: 100%;
+  margin-bottom: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.leitner-boxes__box {
+  background-color: #fff;
+  border: 2px solid #000;
+  flex: 1 1 20%;
+  margin: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leitner-boxes__box:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.leitner-boxes__text {
+  color: var(--primary-color);
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.par {
+  margin-bottom: 1.3em;
+}
+.par--md {
+  font-size: 1.3em;
 }
 
 /*# sourceMappingURL=style.css.map */
