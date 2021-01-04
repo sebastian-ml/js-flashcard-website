@@ -69,9 +69,6 @@ h2 {
   align-items: center;
   flex-direction: column;
 }
-.section:first-child {
-  min-height: calc(100vh - var(--header-height));
-}
 .section__heading {
   width: 700px;
   max-width: 95%;
@@ -118,6 +115,18 @@ h2 {
   background-color: #f6f6f6;
   padding: 1em;
   width: 100%;
+}
+
+.main {
+  min-height: calc(100vh - var(--header-height));
+}
+.main--centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 *, *:after, *:before {
@@ -247,16 +256,6 @@ h2 {
 
 .bold--md {
   font-weight: 500;
-}
-
-.login, .register {
-  min-height: calc(100vh - var(--header-height));
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

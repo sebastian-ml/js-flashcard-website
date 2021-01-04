@@ -1,0 +1,12 @@
+@use 'partials/mixins';
+
+.main {
+  // Substract header height from the minimum height
+  min-height: calc(100vh - var(--header-height));
+
+  &--centered {
+    @include mixins.prefix(display, flex);
+    justify-content: center;
+    align-items: center;
+  }
+}

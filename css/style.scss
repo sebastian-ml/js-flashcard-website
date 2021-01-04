@@ -5,6 +5,7 @@
 @use 'header';
 @use 'section';
 @use 'form';
+@use 'main';
 
 *, *:after, *:before {
   box-sizing: border-box;
@@ -134,11 +135,4 @@
   &--md {
     font-weight: 500;
   }
-}
-
-.login, .register {
-  min-height: calc(100vh - var(--header-height));
-  @include mixins.prefix(display, flex);
-  justify-content: center;
-  align-items: center;
 }
