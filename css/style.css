@@ -174,6 +174,9 @@ textarea {
   padding: 2em 1em;
   box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.25);
 }
+.card--small {
+  font-size: 0.8rem;
+}
 .card__question {
   font-size: 1.2em;
 }
@@ -273,6 +276,60 @@ textarea {
 
 .bold--md {
   font-weight: 500;
+}
+
+.presentation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 1000px;
+  max-width: 100%;
+  padding: 1.5em;
+}
+.presentation__carousel {
+  width: 70%;
+}
+.presentation__list {
+  width: 30%;
+  border-right: 2px solid #cecece;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.presentation__label {
+  position: relative;
+  padding: 0.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+.presentation__item {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.carousel {
+  -ms-display: grid;
+  display: grid;
+  grid-gap: 20px;
+  justify-items: center;
+  grid-template-columns: 1fr;
+}
+.carousel__heading {
+  color: var(--primary-color);
+}
+.carousel__figure {
+  width: 40%;
 }
 
 /*# sourceMappingURL=style.css.map */

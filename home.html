@@ -115,20 +115,59 @@
 
         <section class="section">
             <h2 class="heading section__heading">Discover various types of flashcards</h2>
-            <ul class="flashcards-types">
-                <li class="flashcards-types__item">
-                    <b class="bold bold--md">Classic</b> - Question and correct answer on the card reverse
-                </li>
-                <li class="flashcards-types__item">
-                    <b class="bold bold--md">Millionaire</b> - 4 possible answers. Only 1 is correct
-                </li>
-                <li class="flashcards-types__item">
-                    <b class="bold bold--md">Write</b> - Fill the missing place with the right answer
-                </li>
-                <li class="flashcards-types__item">
-                    <b class="bold bold--md">Gap</b> - Similar to <i>Write</i> but you do not need to write anything, just check the right answer
-                </li>
-            </ul>
+            <div class="presentation">
+                <ul class="presentation__list">
+                    <label class="presentation__label">Classic
+                        <input class="presentation__item" type="radio" id="radio-classic" name="drone" value="classic">
+                    </label>
+                    <label class="presentation__label">Milionaire
+                        <input class="presentation__item" type="radio" id="radio-milionaire" name="drone" value="milionaire">
+                    </label>
+                    <label class="presentation__label">Write
+                        <input class="presentation__item" type="radio" id="radio-write" name="drone" value="write">
+                    </label>
+                    <label class="presentation__label">Gap
+                        <input class="presentation__item" type="radio" id="radio-gap" name="drone" value="gap">
+                    </label>
+                    <!--                    <li class="presentation__item">Classic</li>-->
+                    <!--                    <li class="presentation__item">Milionaire</li>-->
+                    <!--                    <li class="presentation__item">Write</li>-->
+                    <!--                    <li class="presentation__item">Gap</li>-->
+                </ul>
+                <div class="carousel presentation__carousel">
+                    <div class="card card--small carousel__figure">
+                        <h3 class="heading card__question">
+                            What is the highest mountain in the world?
+                        </h3>
+                        <ul class="card__answers">
+                            <li class="card__answer">Mont Blanc</li>
+                            <li class="card__answer">Mount Everest</li>
+                            <li class="card__answer">Nanga Parbat</li>
+                            <li class="card__answer">Kilimanjaro</li>
+                        </ul>
+                        <button class="btn card__btn">
+                            Check your answer
+                        </button>
+                    </div>
+                    <h3 class="carousel__heading">Milionaire</h3>
+                    <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                </div>
+            </div>
+
+            <!--            <ul class="flashcards-types">-->
+            <!--                <li class="flashcards-types__item">-->
+            <!--                    <b class="bold bold&#45;&#45;md">Classic</b> - Question and correct answer on the card reverse-->
+            <!--                </li>-->
+            <!--                <li class="flashcards-types__item">-->
+            <!--                    <b class="bold bold&#45;&#45;md">Millionaire</b> - 4 possible answers. Only 1 is correct-->
+            <!--                </li>-->
+            <!--                <li class="flashcards-types__item">-->
+            <!--                    <b class="bold bold&#45;&#45;md">Write</b> - Fill the missing place with the right answer-->
+            <!--                </li>-->
+            <!--                <li class="flashcards-types__item">-->
+            <!--                    <b class="bold bold&#45;&#45;md">Gap</b> - Similar to <i>Write</i> but you do not need to write anything, just check the right answer-->
+            <!--                </li>-->
+            <!--            </ul>-->
         </section>
     </div>
 </main>
