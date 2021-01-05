@@ -6,7 +6,57 @@
 
 {% block main %}
 <main class="main">
-    <div class="container">s</div>
+    <div class="container">
+        <article>
+            <h1>About us</h1>
+            <p class="par par--md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid, atque cumque et ex fugit laboriosam maxime modi nemo nobis, non recusandae sed sunt velit veritatis vitae voluptas? Dicta, minus.</p>
+        </article>
+        <article>
+            <h2>Leitner System</h2>
+            <p class="par par--md">
+                The system that we use was invented by the German science journalist Sebastian Leitner.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aperiam cumque facilis incidunt iste necessitatibus placeat possimus sequi voluptas. Animi in incidunt iusto labore laudantium perferendis repellat totam ullam voluptatum.
+            </p>
+            <p class="par par--md">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam asperiores at cumque deleniti, dicta dolore in iure molestiae nam, omnis repellat, sit tempore vitae voluptates. Assumenda perspiciatis sed voluptatum.
+            </p>
+        </article>
+        <section>
+            <h2>Contact us</h2>
+            <p class="par par--md">
+                If you have any suggestions do not hesitate to contact us.
+            </p>
+            <form class="form form--large">
+                <div class="form__row form__row--large">
+                    <label class="form__label" for="name"><b>Name</b></label>
+                    <input class="form__input" type="text" id="name" required>
+                </div>
+
+                <div class="form__row form__row--large">
+                    <label class="form__label" for="email"><b>Email</b></label>
+                    <input class="form__input" type="email" id="email" required>
+                </div>
+
+                <div class="form__row form__row--large">
+                    <label class="form__label" for="subject"><b>Subject</b></label>
+                    <select class="form__input" name="subject" id="subject" required>
+                        <option value="volvo">Report a bug</option>
+                        <option value="volvo">Suggestions for improvement</option>
+                        <option value="volvo">Other</option>
+                    </select>
+                </div>
+
+                <div class="form__row form__row--large form__row--textarea">
+                    <label class="form__label" for="message"><b>Message</b></label>
+                    <textarea class="form__input form__input--large" id="message" placeholder="Your message" required minlength="5"></textarea>
+                </div>
+
+                <div class="form__row form__row--large">
+                    <input type="submit" class="btn form__submit" value="Send">
+                </div>
+            </form>
+        </section>
+    </div>
 </main>
 {% endblock %}
 

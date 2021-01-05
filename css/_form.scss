@@ -11,6 +11,10 @@
   margin: auto;
   padding: 2em;
 
+  &--large {
+    max-width: 600px;
+  }
+
   &__label {
     font-size: .9em;
   }
@@ -32,6 +36,14 @@
     @include mixins.prefix(display, flex);
     flex-direction: column;
     margin: .45em;
+
+    &--large {
+      width: 80%;
+    }
+
+    &--textarea {
+      margin-top: 1.5em;
+    }
   }
 
   &__input {
@@ -40,5 +52,9 @@
     background-color: #f6f6f6;
     padding: 1em;
     width: 100%;
+
+    &--large {
+      height: 8em;
+    }
   }
 }

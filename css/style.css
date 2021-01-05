@@ -21,6 +21,12 @@ h2 {
   font-size: 2.25rem;
 }
 
+textarea {
+  resize: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .header {
   margin: auto;
   height: var(--header-height);
@@ -70,8 +76,7 @@ h2 {
   flex-direction: column;
 }
 .section__heading {
-  width: 700px;
-  max-width: 95%;
+  max-width: 700px;
 }
 
 .form {
@@ -87,6 +92,9 @@ h2 {
   max-width: 500px;
   margin: auto;
   padding: 2em;
+}
+.form--large {
+  max-width: 600px;
 }
 .form__label {
   font-size: 0.9em;
@@ -109,12 +117,21 @@ h2 {
   flex-direction: column;
   margin: 0.45em;
 }
+.form__row--large {
+  width: 80%;
+}
+.form__row--textarea {
+  margin-top: 1.5em;
+}
 .form__input {
   border-radius: 25px;
   border: 1px solid #000;
   background-color: #f6f6f6;
   padding: 1em;
   width: 100%;
+}
+.form__input--large {
+  height: 8em;
 }
 
 .main {

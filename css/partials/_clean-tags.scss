@@ -12,3 +12,9 @@ h1, h2 {
 h2 {
   font-size: 2.25rem;
 }
+
+textarea {
+  resize: none;
+  font-family: inherit;
+  font-size: inherit;
+}
