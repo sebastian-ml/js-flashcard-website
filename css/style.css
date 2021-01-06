@@ -2,6 +2,7 @@
   --primary-color: #3885df;
   --primary-color-hover: #3870df;
   --header-height: 60px;
+  --very-short-animation: 100ms;
   --short-animation: 200ms;
   --border-radius-basic: 15px;
 }
@@ -304,16 +305,18 @@ textarea {
   position: relative;
   justify-content: center;
   height: 3em;
+  width: 100%;
 }
 .presentation__label {
   width: calc(100% + 3px);
-  padding: 1em;
+  height: 100%;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-right: 3px solid transparent;
   right: -3px;
   cursor: pointer;
@@ -339,6 +342,7 @@ textarea {
   grid-gap: 20px;
   justify-items: center;
   grid-template-columns: 1fr;
+  position: relative;
 }
 .carousel__heading {
   font-size: 1.5em;
@@ -346,6 +350,50 @@ textarea {
 }
 .carousel__figure {
   width: 40%;
+}
+.carousel__btn {
+  position: absolute;
+  background-color: #fff;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #cecece;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 15%;
+  top: 40%;
+  transition: ease-in-out var(--very-short-animation);
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.carousel__btn:hover {
+  border-color: #a3a3a3;
+  transform: scale(1.1);
+}
+.carousel__btn:hover:after {
+  border-color: black;
+}
+.carousel__btn:after {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  content: "";
+  border: solid #7b7b7b;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  transform: rotate(-45deg);
+  padding: 3px;
+}
+.carousel__btn--left {
+  left: 15%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.carousel__btn--left:after {
+  transform: rotate(135deg);
 }
 
 /*# sourceMappingURL=style.css.map */
