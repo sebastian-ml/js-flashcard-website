@@ -15,7 +15,7 @@ body {
 h1, h2 {
   color: var(--primary-color);
   font-weight: 500;
-  font-size: 2.35rem;
+  font-size: 2.25rem;
 }
 
 h2 {
@@ -68,16 +68,19 @@ textarea {
 }
 
 .section {
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  min-height: calc(100vh - var(--header-height));
+  padding: 2em;
 }
 .section__heading {
   max-width: 700px;
+  margin-bottom: 2.75em;
 }
 
 .form {
