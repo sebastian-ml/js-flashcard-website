@@ -198,11 +198,25 @@
   }
 }
 
+.slider {
+  @include mixins.prefix(display, flex);
+  height: 100%;
+  flex: 0 0 400%;
+  transition: 1s;
+
+  &__section {
+    flex: 1 0 25%;
+    @include mixins.prefix(display, grid, ms);
+    grid-gap: 20px;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    padding: .7em;
+  }
+}
+
 .carousel {
-  @include mixins.prefix(display, grid, ms);
-  grid-gap: 20px;
-  justify-items: center;
-  grid-template-columns: 1fr;
+  @include mixins.prefix(display, flex);
+  justify-content: center;
   position: relative;
 
   &__heading {
@@ -210,8 +224,11 @@
     color: var(--primary-color);
   }
 
-  &__figure {
+  &__items {
     width: 40%;
+    overflow-x: hidden;
+    @include mixins.prefix(display, flex);
+    justify-content: flex-start;
   }
 
   &__btn {

@@ -101,25 +101,89 @@
                     </div>
                 </div>
                 <div class="carousel presentation__carousel">
-                    <button class="carousel__btn"></button>
-                    <button class="carousel__btn carousel__btn--left"></button>
+                    <button class="carousel__btn" id="carousel-btn-right"></button>
+                    <button class="carousel__btn carousel__btn--left" id="carousel-btn-left"></button>
 
-                    <div class="card card--small carousel__figure">
-                        <h3 class="heading card__question">
-                            What is the highest mountain in the world?
-                        </h3>
-                        <ul class="card__answers">
-                            <li class="card__answer">Mont Blanc</li>
-                            <li class="card__answer">Mount Everest</li>
-                            <li class="card__answer">Nanga Parbat</li>
-                            <li class="card__answer">Kilimanjaro</li>
-                        </ul>
-                        <button class="btn card__btn">
-                            Check your answer
-                        </button>
+                    <div class="carousel__items" id="carousel-items">
+                        <div class="slider" id="flashcard-slider">
+                            <section class="slider__section">
+                                <div class="card card--small">
+                                    <h3 class="heading card__question">
+                                        What is the highest mountain in the world?
+                                    </h3>
+                                    <ul class="card__answers">
+                                        <li class="card__answer">Mont Blanc</li>
+                                        <li class="card__answer">Mount Everest</li>
+                                        <li class="card__answer">Nanga Parbat</li>
+                                        <li class="card__answer">Kilimanjaro</li>
+                                    </ul>
+                                    <button class="btn card__btn">
+                                        Check your answer
+                                    </button>
+                                </div>
+                                <h3 class="carousel__heading">Classic</h3>
+                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                            </section>
+
+                            <section class="slider__section">
+                                <div class="card card--small">
+                                    <h3 class="heading card__question">
+                                        What is the highest mountain in the world?
+                                    </h3>
+                                    <ul class="card__answers">
+                                        <li class="card__answer">Mont Blanc</li>
+                                        <li class="card__answer">Mount Everest</li>
+                                        <li class="card__answer">Nanga Parbat</li>
+                                        <li class="card__answer">Kilimanjaro</li>
+                                    </ul>
+                                    <button class="btn card__btn">
+                                        Check your answer
+                                    </button>
+                                </div>
+                                <h3 class="carousel__heading">Milionaire</h3>
+                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                            </section>
+
+                            <section class="slider__section">
+                                <div class="card card--small">
+                                    <h3 class="heading card__question">
+                                        What is the highest mountain in the world?
+                                    </h3>
+                                    <ul class="card__answers">
+                                        <li class="card__answer">Mont Blanc</li>
+                                        <li class="card__answer">Mount Everest</li>
+                                        <li class="card__answer">Nanga Parbat</li>
+                                        <li class="card__answer">Kilimanjaro</li>
+                                    </ul>
+                                    <button class="btn card__btn">
+                                        Check your answer
+                                    </button>
+                                </div>
+                                <h3 class="carousel__heading">Gap</h3>
+                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                            </section>
+
+
+                            <section class="slider__section">
+                                <div class="card card--small">
+                                    <h3 class="heading card__question">
+                                        What is the highest mountain in the world?
+                                    </h3>
+                                    <ul class="card__answers">
+                                        <li class="card__answer">Mont Blanc</li>
+                                        <li class="card__answer">Mount Everest</li>
+                                        <li class="card__answer">Nanga Parbat</li>
+                                        <li class="card__answer">Kilimanjaro</li>
+                                    </ul>
+                                    <button class="btn card__btn">
+                                        Check your answer
+                                    </button>
+                                </div>
+                                <h3 class="carousel__heading">Write</h3>
+                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                            </section>
+                        </div>
                     </div>
-                    <h3 class="carousel__heading">Milionaire</h3>
-                    <p class="carousel__description">4 possible answers. Only 1 is correct</p>
                 </div>
             </div>
         </section>
@@ -128,4 +192,5 @@
 {% endblock %}
 
 {% block script %}
+<script src="js/script.js"></script>
 {% endblock %}
