@@ -84,12 +84,12 @@
             <div class="presentation">
                 <div class="presentation__items">
                     <div class="presentation__row">
-                        <input class="presentation__item" type="radio" id="radio-classic" name="drone" value="classic">
+                        <input class="presentation__item" type="radio" id="radio-classic" name="drone" value="classic" checked>
                         <label for="radio-classic" class="presentation__label">Classic</label>
                     </div>
                     <div class="presentation__row">
-                        <input class="presentation__item" type="radio" id="radio-milionaire" name="drone" value="classic">
-                        <label for="radio-milionaire" class="presentation__label">Milionaire</label>
+                        <input class="presentation__item" type="radio" id="radio-millionaire" name="drone" value="classic">
+                        <label for="radio-millionaire" class="presentation__label">Milionaire</label>
                     </div>
                     <div class="presentation__row">
                         <input class="presentation__item" type="radio" id="radio-gap" name="drone" value="classic">
@@ -107,7 +107,7 @@
                     <div class="carousel__items" id="carousel-items">
                         <div class="slider" id="flashcard-slider">
                             <section class="slider__section">
-                                <div class="card card--small">
+                                <div class="card card--small" data-card-type="classic">
                                     <h3 class="heading card__question">
                                         What is the highest mountain in the world?
                                     </h3>
@@ -121,12 +121,12 @@
                                         Check your answer
                                     </button>
                                 </div>
-                                <h3 class="carousel__heading">Classic</h3>
-                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                                <h3 class="slider__heading">Classic</h3>
+                                <p>4 possible answers. Only 1 is correct</p>
                             </section>
 
                             <section class="slider__section">
-                                <div class="card card--small">
+                                <div class="card card--small" data-card-type="millionaire">
                                     <h3 class="heading card__question">
                                         What is the highest mountain in the world?
                                     </h3>
@@ -140,12 +140,12 @@
                                         Check your answer
                                     </button>
                                 </div>
-                                <h3 class="carousel__heading">Milionaire</h3>
-                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                                <h3 class="slider__heading">Milionaire</h3>
+                                <p>4 possible answers. Only 1 is correct</p>
                             </section>
 
                             <section class="slider__section">
-                                <div class="card card--small">
+                                <div class="card card--small" data-card-type="gap">
                                     <h3 class="heading card__question">
                                         What is the highest mountain in the world?
                                     </h3>
@@ -159,13 +159,12 @@
                                         Check your answer
                                     </button>
                                 </div>
-                                <h3 class="carousel__heading">Gap</h3>
-                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                                <h3 class="slider__heading">Gap</h3>
+                                <p>4 possible answers. Only 1 is correct</p>
                             </section>
 
-
                             <section class="slider__section">
-                                <div class="card card--small">
+                                <div class="card card--small" data-card-type="write">
                                     <h3 class="heading card__question">
                                         What is the highest mountain in the world?
                                     </h3>
@@ -179,8 +178,8 @@
                                         Check your answer
                                     </button>
                                 </div>
-                                <h3 class="carousel__heading">Write</h3>
-                                <p class="carousel__description">4 possible answers. Only 1 is correct</p>
+                                <h3 class="slider__heading">Write</h3>
+                                <p>4 possible answers. Only 1 is correct</p>
                             </section>
                         </div>
                     </div>

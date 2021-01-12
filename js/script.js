@@ -26,12 +26,38 @@ function slideItem(slider, newDirection, justifyContent, transformValue) {
     flashcardSlider.style.transform = transformValue;
 }
 
+function checkCurrentCardType(direction) {
+    let presentationCurrentFlashcard;
+
+    if (direction === 'right') {
+        presentationCurrentFlashcard = flashcardSlider.children[1].getElementsByClassName('card')[0].dataset.cardType;
+    } else if (direction === 'left') {
+        presentationCurrentFlashcard = flashcardSlider.children[flashcardSlider.children.length - 2].getElementsByClassName('card')[0].dataset.cardType;
+    }
+
+    console.log(presentationCurrentFlashcard)
+    return presentationCurrentFlashcard;
+}
+
+function updateCheckedFlashcard(typeToCheck) {
+    const cardTypesCheckboxes = {
+        classic: document.getElementById('radio-classic'),
+        millionaire: document.getElementById('radio-millionaire'),
+        gap: document.getElementById('radio-gap'),
+        write: document.getElementById('radio-write'),
+    }
+
+    cardTypesCheckboxes[typeToCheck].checked = true;
+}
+
 carouselBtnRight.addEventListener('click', () => {
-    slideItem(flashcardSlider, 'right', 'flex-start', 'translateX(-25%)')
+    slideItem(flashcardSlider, 'right', 'flex-start', 'translateX(-25%)');
+    updateCheckedFlashcard(checkCurrentCardType('right'));
 });
 
 carouselBtnLeft.addEventListener('click', () => {
-    slideItem(flashcardSlider, 'left', 'flex-end', 'translateX(25%)')
+    slideItem(flashcardSlider, 'left', 'flex-end', 'translateX(25%)');
+    updateCheckedFlashcard(checkCurrentCardType('left'));
 });
 
 flashcardSlider.addEventListener('transitionend', () => {

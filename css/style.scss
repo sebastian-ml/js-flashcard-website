@@ -212,17 +212,17 @@
     grid-template-columns: 1fr;
     padding: .7em;
   }
+
+  &__heading {
+    font-size: 1.5em;
+    color: var(--primary-color);
+  }
 }
 
 .carousel {
   @include mixins.prefix(display, flex);
   justify-content: center;
   position: relative;
-
-  &__heading {
-    font-size: 1.5em;
-    color: var(--primary-color);
-  }
 
   &__items {
     width: 40%;
