@@ -3,25 +3,28 @@ const flashcardSlider = document.getElementById('flashcard-slider');
 const carouselBtnLeft = document.getElementById('carousel-btn-left');
 const carouselBtnRight = document.getElementById('carousel-btn-right');
 
+const flashcardCheckboxWrapper = document.getElementById('presentation-flashcard-types');
+
 let sliderDirection = 'right';
+let newSliderDirection;
+let activeCheckboxIndex = 0;
 
 /**
  * Slide a container to the left or right by the given value.
  *
  * @param slider - parent container which contains items to slide
- * @param newDirection - direction where the container will be moved. Must be only "left" or "right"
  * @param justifyContent - The expected value of justify-content property
  * @param transformValue - The expected value of transform property
  */
-function slideItem(slider, newDirection, justifyContent, transformValue) {
-    if (sliderDirection !== newDirection) {
+function slideItem(slider, justifyContent, transformValue) {
+    if (newSliderDirection !== sliderDirection) {
         if (sliderDirection === "right") {
             flashcardSlider.appendChild(flashcardSlider.firstElementChild);
         } else if (sliderDirection === 'left') {
             flashcardSlider.prepend(flashcardSlider.lastElementChild);
         }
     }
-    sliderDirection = newDirection;
+
     carouselItems.style.justifyContent = justifyContent;
     flashcardSlider.style.transform = transformValue;
 }
@@ -35,7 +38,6 @@ function checkCurrentCardType(direction) {
         presentationCurrentFlashcard = flashcardSlider.children[flashcardSlider.children.length - 2].getElementsByClassName('card')[0].dataset.cardType;
     }
 
-    console.log(presentationCurrentFlashcard)
     return presentationCurrentFlashcard;
 }
 
@@ -51,13 +53,19 @@ function updateCheckedFlashcard(typeToCheck) {
 }
 
 carouselBtnRight.addEventListener('click', () => {
-    slideItem(flashcardSlider, 'right', 'flex-start', 'translateX(-25%)');
+    newSliderDirection = 'right';
+    updateFlashcardIndex();
+    slideItem(flashcardSlider, 'flex-start', 'translateX(-25%)');
     updateCheckedFlashcard(checkCurrentCardType('right'));
+    sliderDirection = 'right';
 });
 
 carouselBtnLeft.addEventListener('click', () => {
-    slideItem(flashcardSlider, 'left', 'flex-end', 'translateX(25%)');
+    newSliderDirection = 'left';
+    updateFlashcardIndex();
+    slideItem(flashcardSlider, 'flex-end', 'translateX(25%)');
     updateCheckedFlashcard(checkCurrentCardType('left'));
+    sliderDirection = 'left';
 });
 
 flashcardSlider.addEventListener('transitionend', () => {
@@ -71,3 +79,29 @@ flashcardSlider.addEventListener('transitionend', () => {
     flashcardSlider.style.transform = 'none';
     setTimeout(() => flashcardSlider.style.transition = '1s');
 });
+
+flashcardCheckboxWrapper.addEventListener('click', (e) => {
+    if (e.target.type === 'radio') {
+        const radioValue = e.target;
+        const targetIndex = Array.from(radioValue.parentNode.parentNode.children).indexOf(radioValue.parentNode);
+    }
+})
+
+function updateFlashcardIndex() {
+    const maxIndex = flashcardCheckboxWrapper.childElementCount - 1;
+
+    if (newSliderDirection === 'right') {
+        if (activeCheckboxIndex === maxIndex) {
+            activeCheckboxIndex = 0;
+        } else {
+            activeCheckboxIndex++;
+        }
+    } else {
+        if (activeCheckboxIndex === 0) {
+            activeCheckboxIndex = 3;
+        } else {
+            activeCheckboxIndex--;
+        }
+    }
+}
+
