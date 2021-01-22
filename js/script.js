@@ -58,11 +58,13 @@ function updateValueToSlide() {
     }
 }
 
-function updateCheckedFlashcard() {
-    const flashcards = document.querySelectorAll('[card-id]');
-    Array.from(flashcards).forEach(flashcard => {
-        if (flashcard.dataset.Id === activeFlashcardIndex) flashcard.checked = true;
-    })
+function updateClickedFlashcard() {
+    const flashcardToCheck =
+        document.querySelector(
+            '[data-card-id="' + activeFlashcardIndex + '"]'
+        );
+
+    flashcardToCheck.checked = true;
 }
 
 carouselBtnRight.addEventListener('click', () => {
@@ -126,7 +128,7 @@ function updateFlashcardIndex() {
         }
     }
 
-    updateCheckedFlashcard();
+    updateClickedFlashcard();
     updateIndexDiff();
 }
 
