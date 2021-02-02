@@ -111,18 +111,18 @@ function runCarouselDefaultUpdates() {
 }
 
 function updateIndexDifference() {
-    carousel.activeFlashcardIndex =
+    carousel.activePrevDifference =
         carousel.activeFlashcardID - carousel.prevFlashcardID;
 }
 
 function updateSliderDirection() {
-    if (carousel.activeFlashcardIndex === -maxFlashcardIndex) {
+    if (carousel.activePrevDifference === -maxFlashcardIndex) {
         carousel.sliderDirection = 'right';
-    } else if (carousel.activeFlashcardIndex === maxFlashcardIndex) {
+    } else if (carousel.activePrevDifference === maxFlashcardIndex) {
         carousel.sliderDirection = 'left';
-    } else if (carousel.activeFlashcardIndex > 0) {
+    } else if (carousel.activePrevDifference > 0) {
         carousel.sliderDirection = 'right';
-    } else if (carousel.activeFlashcardIndex < 0) {
+    } else if (carousel.activePrevDifference < 0) {
         carousel.sliderDirection = 'left';
     }
 }
@@ -133,13 +133,13 @@ function updateSliderDirection() {
  * @param transformValue - Must be a number without "%" sign, e.g. 25
  */
 function updateValueToSlide(transformValue) {
-    if (Math.abs(carousel.activeFlashcardIndex) !== maxFlashcardIndex) {
-        carousel.transformValue = -transformValue * carousel.activeFlashcardIndex + '%';
-        carousel.numOfCardsToMove = Math.abs(carousel.activeFlashcardIndex);
+    if (Math.abs(carousel.activePrevDifference) !== maxFlashcardIndex) {
+        carousel.transformValue = -transformValue * carousel.activePrevDifference + '%';
+        carousel.numOfCardsToMove = Math.abs(carousel.activePrevDifference);
     } else {
         carousel.transformValue =
-            carousel.activeFlashcardIndex
-            / Math.abs(carousel.activeFlashcardIndex) * transformValue + '%';
+            carousel.activePrevDifference
+            / Math.abs(carousel.activePrevDifference) * transformValue + '%';
 
         carousel.numOfCardsToMove = 1;
     }

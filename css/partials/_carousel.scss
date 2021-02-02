@@ -1,0 +1,85 @@
+@use 'general/mixins';
+
+.slider {
+  @include mixins.prefix(display, flex);
+  height: 100%;
+  flex: 0 0 400%;
+  transition: 1s;
+
+  &__section {
+    flex: 1 0 25%;
+    @include mixins.prefix(display, grid, ms);
+    grid-gap: 20px;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    padding: .7em;
+  }
+
+  &__heading {
+    font-size: 1.5em;
+    color: var(--primary-color);
+  }
+}
+
+.carousel {
+  @include mixins.prefix(display, flex);
+  justify-content: center;
+  position: relative;
+
+  &__items {
+    width: 40%;
+    overflow-x: hidden;
+    @include mixins.prefix(display, flex);
+    justify-content: flex-start;
+  }
+
+  &__btn {
+    $btnBorderSize: 1px;
+    $btnRightLeft: 15%;
+
+    position: absolute;
+    background-color: #fff;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: $btnBorderSize solid #cecece;
+    @include mixins.prefix(display, flex);
+    justify-content: center;
+    align-items: center;
+    right: $btnRightLeft;
+    top: 40%;
+    transition: ease-in-out var(--very-short-animation);
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      border-color: #a3a3a3;
+      transform: scale(1.1);
+
+      &:after {
+        border-color: black;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      content: '';
+      border: solid #7b7b7b;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      transform: rotate(- 45deg);
+      padding: 3px;
+    }
+
+    &--left {
+      left: $btnRightLeft;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+      &:after {
+        transform: rotate(135deg);
+      }
+    }
+  }
+}
