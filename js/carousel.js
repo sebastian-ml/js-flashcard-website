@@ -17,14 +17,16 @@ const carousel = {
 
     transformValue: undefined,
     numOfCardsToMove: 1,
+
+    locked: false,
 }
 
 carousel.btnLeft.addEventListener('click', () => {
-    moveCarousel('left');
+    if (carousel.locked === false) moveCarousel('left');
 })
 
 carousel.btnRight.addEventListener('click', () => {
-    moveCarousel('right');
+    if (carousel.locked === false) moveCarousel('right');
 })
 
 flashcardSlider.addEventListener('transitionend', () => {
@@ -39,10 +41,17 @@ flashcardSlider.addEventListener('transitionend', () => {
     flashcardSlider.style.transition = 'none';
     flashcardSlider.style.transform = 'none';
     setTimeout(() => flashcardSlider.style.transition = '1s');
+
+    carousel.locked = false;
 })
 
 flashcardCheckboxWrapper.addEventListener('click', (e) => {
-    if (e.target.type === 'radio') {
+    if ((e.target.type === 'radio') && (carousel.locked === true)) {
+        e.preventDefault();
+    }
+    else if ((e.target.type === 'radio') && (carousel.locked === false)) {
+        carousel.locked = true;
+
         const targetID = e.target.getAttribute('data-card-id');
         carousel.prevFlashcardID = carousel.activeFlashcardID;
         carousel.activeFlashcardID = targetID * 1;
@@ -55,6 +64,8 @@ flashcardCheckboxWrapper.addEventListener('click', (e) => {
 
 // direction - Can be only left or right. Must be a string
 function moveCarousel(direction) {
+    carousel.locked = true;
+
     carousel.prevSliderDirection = carousel.sliderDirection;
     carousel.sliderDirection = direction;
 
@@ -142,14 +153,14 @@ function updateValueToSlide(transformValue) {
 function slideItem(slider) {
     if (carousel.sliderDirection !== carousel.prevSliderDirection) {
         if (carousel.sliderDirection === 'left') {
-            flashcardSlider.appendChild(flashcardSlider.firstElementChild);
+            slider.appendChild(slider.firstElementChild);
             carousel.items.style.justifyContent = 'flex-end';
         } else if (carousel.sliderDirection === 'right') {
-            flashcardSlider.prepend(flashcardSlider.lastElementChild);
+            slider.prepend(slider.lastElementChild);
             carousel.items.style.justifyContent = 'flex-start';
         }
     }
 
-    flashcardSlider.style.transform =
+    slider.style.transform =
         'translateX(' + carousel.transformValue + ')';
 }
