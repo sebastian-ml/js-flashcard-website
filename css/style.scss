@@ -198,3 +198,8 @@
     }
   }
 }
+
+.center {
+  @include mixins.prefix(display, flex);
+  justify-content: center;
+}
