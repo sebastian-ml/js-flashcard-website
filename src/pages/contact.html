@@ -1,0 +1,48 @@
+{% set title = "Contact" %}
+
+{% extends "base.njk" %}
+{% block head %}
+{% endblock %}
+
+{% block main %}
+<main class="main">
+    <div class="container">
+        <h1>Contact us</h1>
+        <p class="par par--md">
+            Do you have any ideas how to improve our website? Maybe you have any questions? Do not hesitate to contact us.
+        </p>
+        <form class="form form--large">
+            <div class="form__row form__row--large">
+                <label class="form__label" for="name"><b>Name</b></label>
+                <input class="form__input" type="text" id="name" required>
+            </div>
+
+            <div class="form__row form__row--large">
+                <label class="form__label" for="email"><b>Email</b></label>
+                <input class="form__input" type="email" id="email" required>
+            </div>
+
+            <div class="form__row form__row--large">
+                <label class="form__label" for="subject"><b>Subject</b></label>
+                <select class="form__input" name="subject" id="subject" required>
+                    <option value="bug">Report a bug</option>
+                    <option value="suggestion">Suggestions for improvement</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form__row form__row--large form__row--textarea">
+                <label class="form__label" for="message"><b>Message</b></label>
+                <textarea class="form__input form__input--large" id="message" placeholder="Your message" required minlength="5"></textarea>
+            </div>
+
+            <div class="form__row form__row--large">
+                <input type="submit" class="btn form__submit" value="Send">
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
