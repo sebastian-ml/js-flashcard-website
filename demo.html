@@ -28,14 +28,79 @@
     <div class="container">
         <h1>Demo</h1>
         <p class="par par--md">Do you want to test how does it work? Here you can find 10 different sample flashcards. If you want to create your own flashcards, follow your progress, please register an account <a href="register.html">here</a>. It is for free!</p>
-        <div class="center">
-            <button class="btn">Start demo</button>
+        <!--        <div class="center">-->
+        <!--            <button class="btn">Start demo</button>-->
+        <!--        </div>-->
+        <div class="grid">
+            <div class="card card--small" data-card-type="classic">
+                <div class="card__body">
+                    <h3 class="heading card__question">
+                        What is the capital city of Finland?
+                    </h3>
+                </div>
+                <button class="btn card__btn">
+                    Check your answer
+                </button>
+            </div>
+
+
+            <div class="card card--small" data-card-type="millionaire">
+                <h3 class="heading card__question">
+                    What is the highest mountain in the world?
+                </h3>
+                <ul class="card__answers">
+                    <li class="card__answer">
+                        <input class="card__radio" type="radio" id="answer-0" name="card-option" value="mont blanc">
+                        <label class="card__label" for="answer-0">Mont Blanc</label>
+                    </li>
+                    <li class="card__answer">
+                        <input class="card__radio" type="radio" id="answer-1" name="card-option" value="mount everest">
+                        <label class="card__label" for="answer-1">Mount Everest</label>
+                    </li>
+                    <li class="card__answer">
+                        <input class="card__radio" type="radio" id="answer-2" name="card-option" value="nanga parbat">
+                        <label class="card__label" for="answer-2">Nanga Parbat</label>
+                    </li>
+                    <li class="card__answer">
+                        <input class="card__radio" type="radio" id="answer-3" name="card-option" value="kilimanjaro">
+                        <label class="card__label" for="answer-3">Kilimanjaro</label>
+                    </li>
+                </ul>
+                <button class="btn card__btn">
+                    Check your answer
+                </button>
+            </div>
+
+            <div class="card card--small" data-card-type="gap">
+                <div class="card__body">
+                    <h3 class="heading card__question">
+                        [...] is the longest river in the world.
+                    </h3>
+                </div>
+                <button class="btn card__btn">
+                    Check your answer
+                </button>
+            </div>
+
+            <div class="card card--small" data-card-type="write">
+                <div class="card__body">
+                    <h3 class="heading card__question">
+                        Who won the US Presidential election in 2020? Name and surname is required.
+                    </h3>
+                    <label>
+                        <input class="card__input" type="text" placeholder="Type your answer">
+                    </label>
+                </div>
+                <button class="btn card__btn">
+                    Check your answer
+                </button>
+            </div>
         </div>
-    </div>
 </main>
 
 
 
+<script src="js/flashcard.js"></script>
 
 </body>
 </html>

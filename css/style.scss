@@ -60,13 +60,38 @@
   }
 
   &__answer {
-    padding: .65em 0;
-    text-align: center;
     width: 100%;
+    position: relative;
+  }
+
+  &__label {
+    width: 100%;
+    height: 100%;
+    @include mixins.prefix(display, flex);
+    justify-content: center;
+    align-items: center;
+    padding: .65em 0;
+    z-index: 1;
+    position: relative;
 
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  &__radio {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    position: absolute;
+
+    &:hover {
       background-color: var(--greyish-hover);
+    }
+
+    &:checked {
+      background-color: var(--greyish-checked);
     }
   }
 
