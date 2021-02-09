@@ -244,6 +244,15 @@ textarea {
   max-width: 1200px;
   margin: auto;
 }
+.container--flashcard {
+  min-height: calc(100vh - var(--header-height));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  height: 1px;
+}
 
 .heading {
   text-align: center;
@@ -260,6 +269,8 @@ textarea {
   border-radius: var(--border-radius-basic);
   padding: 2em 1em;
   box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  min-height: 280px;
 }
 .card__body {
   flex-grow: 1;
@@ -477,6 +488,27 @@ textarea {
   display: -webkit-flex;
   display: flex;
   justify-content: center;
+}
+
+.flashcard-questions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+.flashcard-questions__card {
+  min-width: 200px;
+  max-width: 300px;
+  min-height: 350px;
+  margin-bottom: 1em;
+}
+
+#demo-card-container {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

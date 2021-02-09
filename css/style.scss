@@ -18,6 +18,13 @@
   width: 95%;
   max-width: 1200px;
   margin: auto;
+
+  &--flashcard {
+    min-height: calc(100vh - var(--header-height));
+    @include mixins.prefix(display, flex);
+    flex-direction: column;
+    height: 1px;
+  }
 }
 
 .heading {
@@ -32,6 +39,8 @@
   border-radius: var(--border-radius-basic);
   padding: 2em 1em;
   box-shadow: -4px 4px 7px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  min-height: 280px;
 
   &__body {
     flex-grow: 1;
@@ -252,4 +261,23 @@
 .center {
   @include mixins.prefix(display, flex);
   justify-content: center;
+}
+
+.flashcard-questions {
+  @include mixins.prefix(display, flex);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+
+  &__card {
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 350px;
+    margin-bottom: 1em;
+  }
+}
+
+#demo-card-container {
+  display: none;
 }

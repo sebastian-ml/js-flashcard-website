@@ -1,13 +1,14 @@
 class Flashcard {
     constructor(cardType, question, answers) {
-        this.cardType = cardType;
-        this.box = 1;
+        this.cardType = cardType.toLowerCase();
         this.question = question;
         this.answers = answers;
+
+        this.box = 1;
     }
 
-    createCard() {
-        const card = createHtmlElement('div', ['card', 'card--small']);
+    createCard(cardID, cardBtnID) {
+        const card = createHtmlElement('div', ['card', 'flashcard-questions__card'], cardID);
         card.dataset.cardType = this.cardType;
 
         const cardQuestion = createHtmlElement('h3',['heading', 'card__question']);
@@ -62,19 +63,60 @@ class Flashcard {
             card.appendChild(cardAnswers);
         }
 
-        const cardBtn = createHtmlElement('button',['btn', 'card__btn']);
+        const cardBtn = createHtmlElement(
+            'button',
+            ['btn', 'card__btn'],
+            cardBtnID
+        );
         cardBtn.innerText = 'Check your answer';
         card.appendChild(cardBtn);
 
-        this.card = card;
+        return card;
+    }
+
+    checkAnswer(userAnswer) {
+        const correctAnswer = (this.answers).filter(answer => answer['correct'])
+        if (userAnswer === correctAnswer) {
+            this.box++;
+        } else {
+            if (this.box !== 1) this.box--;
+        }
     }
 }
 
-function createHtmlElement(htmlTagName, htmlClassNames, htmlID) {
-    const newElement = document.createElement(htmlTagName);
+const questions = [];
 
-    if (htmlClassNames) newElement.classList.add(...htmlClassNames);
-    if (htmlID) newElement.id = htmlID;
+questions[0] = new Flashcard(
+    'millionaire',
+    'What is the highest mountain in the world?',
+    [
+        {answer: 'Mont Blanc', correct: false},
+        {answer: 'Mount Everest', correct: true},
+        {answer: 'Nanga Parbat', correct: false},
+        {answer: 'Kilimanjaro', correct: false},
+    ]
+);
 
-    return newElement;
-}
+questions[1] = new Flashcard(
+    'gap',
+    'Nile is the longest river in the world.',
+    [
+        {answer: 'Nile', correct: true},
+    ]
+);
+
+questions[2] = new Flashcard(
+    'classic',
+    'What is the capital city of Finland?',
+    [
+        {answer: 'Helsinki', correct: true},
+    ]
+);
+
+questions[3] = new Flashcard(
+    'write',
+    'Who won the US Presidential election in 2020? Name and surname is required.',
+    [
+        {answer: 'Joe Biden', correct: true},
+    ]
+);
