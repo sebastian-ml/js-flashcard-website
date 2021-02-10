@@ -7,7 +7,7 @@ class Flashcard {
         this.box = 1;
     }
 
-    createCard(cardID, cardBtnID) {
+    createCard(cardID, cardBtnID, cardAnswersID, cardInputID) {
         const card = createHtmlElement('div', ['card', 'flashcard-questions__card'], cardID);
         card.dataset.cardType = this.cardType;
 
@@ -25,7 +25,11 @@ class Flashcard {
             if (this.cardType === 'write') {
                 const label = createHtmlElement('label');
 
-                const cardInput = createHtmlElement('input', ['card__input']);
+                const cardInput = createHtmlElement(
+                    'input',
+                    ['card__input'],
+                    cardInputID
+                );
                 cardInput.type = 'text';
                 cardInput.placeholder = 'Enter your answer'
 
@@ -36,10 +40,17 @@ class Flashcard {
         }
 
         if (this.cardType === 'millionaire') {
-            const cardAnswers = createHtmlElement('ul',['card__answers']);
+            const cardAnswers = createHtmlElement(
+                'ul',
+                ['card__answers'],
+                cardAnswersID
+            );
 
             this.answers.forEach((answer, index) => {
-                const cardAnswer = createHtmlElement('li', ['card__answer']);
+                const cardAnswer = createHtmlElement(
+                    'li',
+                    ['card__answer']
+                );
 
                 const cardRadio = createHtmlElement(
                     'input',
@@ -75,12 +86,18 @@ class Flashcard {
     }
 
     checkAnswer(userAnswer) {
-        const correctAnswer = (this.answers).filter(answer => answer['correct'])
+        const correctAnswer =
+            (this.answers).filter(answer => answer['correct'])[0]['answer'];
+        let isCorrect = false;
+
         if (userAnswer === correctAnswer) {
             this.box++;
+            isCorrect = true;
         } else {
             if (this.box !== 1) this.box--;
         }
+
+        return isCorrect;
     }
 }
 

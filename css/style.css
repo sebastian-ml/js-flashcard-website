@@ -511,4 +511,8 @@ textarea {
   display: none;
 }
 
+#demo-next-question {
+  visibility: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */
