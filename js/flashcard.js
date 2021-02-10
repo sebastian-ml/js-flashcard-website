@@ -102,6 +102,7 @@ class Flashcard {
 }
 
 const questions = [];
+const questionsAnswered = [];
 
 questions[0] = new Flashcard(
     'millionaire',

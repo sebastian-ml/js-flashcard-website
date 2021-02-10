@@ -1,5 +1,4 @@
 const container = document.getElementById('demo-container');
-const startDemo = document.getElementById('demo-start');
 const nextQuestionBtn = document.getElementById('demo-next-question');
 const cardContainer = document.getElementById('demo-card-container');
 const htmlToRemove = [
@@ -7,6 +6,7 @@ const htmlToRemove = [
     document.getElementsByClassName('center')[0],
 ];
 
+let currentQuestionIndex;
 let currentQuestion;
 let userAnswered = false;
 
@@ -14,26 +14,30 @@ let checkButton;
 let answersLi;
 let userInput;
 
-// Remove the default text and show the first randomly chosen card
-startDemo.addEventListener('click', () => {
-    htmlToRemove.forEach(ele => container.removeChild(ele));
-    cardContainer.style.display = 'flex';
+container.addEventListener('click', (e) => {
+    const targetID = e.target.id;
 
-    generateCard();
-    getTriggers(currentQuestion.cardType);
-    checkIfAnswered();
+    if (targetID === 'demo-start' || targetID === 'demo-next-question') {
+        if (targetID === 'demo-start') {
+            htmlToRemove.forEach(ele => container.removeChild(ele));
+            cardContainer.style.display = 'flex';
+        } else if (targetID === 'demo-next-question') {
+            nextQuestionBtn.style.visibility = 'hidden';
+            questions.splice(currentQuestionIndex, 1);
+            questionsAnswered.push(currentQuestion);
+        }
+        generateCard(questions.length);
+        getTriggers(currentQuestion.cardType);
+        checkIfAnswered();
+        checkButton.addEventListener('click', () => {
+            showNextBtn(userAnswered, questions.length);
+        })
+    }
 })
 
-nextQuestionBtn.addEventListener('click', () => {
-    nextQuestionBtn.style.visibility = 'hidden';
-
-    generateCard();
-    getTriggers(currentQuestion.cardType);
-    checkIfAnswered();
-})
-
-function generateCard() {
-    currentQuestion = getRandomItem(questions);
+function generateCard(cardsLeft) {
+    currentQuestionIndex = getRandomNumber(questions.length);
+    currentQuestion = questions[currentQuestionIndex];
     const questionCard = currentQuestion.createCard(
         'demo-card',
         'demo-check-btn',
@@ -44,7 +48,7 @@ function generateCard() {
     // Remove card if it exists
     const activeCard = document.getElementById('demo-card');
     if (activeCard !== null) {
-        activeCard.remove()
+        activeCard.remove();
     }
 
     cardContainer.prepend(questionCard);
@@ -62,41 +66,29 @@ function getTriggers(cardType) {
 }
 
 function checkIfAnswered() {
-    if (['millionaire', 'write'].includes(currentQuestion.cardType)) {
-        checkButton.addEventListener('click', () => {
-            const userAnswer = getUserAnswer(currentQuestion.cardType).trim();
-
-            if (userAnswer !== undefined && userAnswer.length > 0) {
-                if (currentQuestion.checkAnswer(userAnswer) === true) {
-                    console.log('good');
-                } else {
-                    console.log('wrong');
-                }
-                userAnswered = true;
-            }
-        })
-    } else {
-        checkButton.addEventListener('click', () => {
-            userAnswered = true;
-        })
-    }
-
     checkButton.addEventListener('click', () => {
-        if (userAnswered) {
-            nextQuestionBtn.style.visibility = 'visible';
+        if (['millionaire', 'write'].includes(currentQuestion.cardType)) {
+            const userAnswer = getUserAnswer(currentQuestion.cardType).trim();
+            userAnswered = userAnswer !== undefined && userAnswer.length > 0;
+        } else {
+            userAnswered = true;
         }
     })
 }
 
-function getUserAnswer(cardType) {
-    let userAnswer;
-
-    if (cardType === 'millionaire') {
-        userAnswer =
-            Array.from(answersLi).filter(answer => answer.checked === true)[0].value;
-    } else if (cardType === 'write') {
-        userAnswer = userInput.value;
+function showNextBtn(userAnswered, cardsLeft) {
+    if (userAnswered && cardsLeft > 1) {
+        nextQuestionBtn.style.visibility = 'visible';
+        userAnswered = false;
+    } else {
+        console.log('There are no more cards');
     }
+}
 
-    return userAnswer;
+function getUserAnswer(cardType) {
+    if (cardType === 'millionaire') {
+        return [...answersLi].filter(answer => answer.checked === true)[0].value;
+    } else if (cardType === 'write') {
+        return userInput.value;
+    }
 }
