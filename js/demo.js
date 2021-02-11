@@ -1,3 +1,6 @@
+import { questions, questionsAnswered } from "./flashcard.js";
+import { getRandomNumber } from "./script.js";
+
 const container = document.getElementById('demo-container');
 const nextQuestionBtn = document.getElementById('demo-next-question');
 const cardContainer = document.getElementById('demo-card-container');

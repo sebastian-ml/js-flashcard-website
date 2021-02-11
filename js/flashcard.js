@@ -1,3 +1,5 @@
+import { createHtmlElement } from "./script.js";
+
 class Flashcard {
     constructor(cardType, question, answers) {
         this.cardType = cardType.toLowerCase();
@@ -101,8 +103,8 @@ class Flashcard {
     }
 }
 
-const questions = [];
-const questionsAnswered = [];
+export const questions = [];
+export const questionsAnswered = [];
 
 questions[0] = new Flashcard(
     'millionaire',
